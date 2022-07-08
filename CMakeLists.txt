@@ -12,11 +12,10 @@ add_executable(${PROJECT_NAME}
             arm_mult_f32.c arm_add_f32.c arm_dot_prod_f32.c
         )
 
-#add_definitions(-DARM_MATH_LOOPUNROLL)
-
 target_include_directories(${PROJECT_NAME} PRIVATE /home/jasand01/CMSIS_5/CMSIS/DSP/Include 
                                                   /home/jasand01/CMSIS_5/CMSIS/Core/Include
                                                   ) 
+set(CMAKE_C_FLAGS_RELEASE "-O3 -DNDEBUG -DARM_MATH_LOOPUNROLL")
 
 # pull in common dependencies
 target_link_libraries(${PROJECT_NAME} pico_stdlib)

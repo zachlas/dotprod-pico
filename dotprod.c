@@ -7,6 +7,8 @@
 
 #define MAX_BLOCKSIZE    256  // Size of vectors
 
+float32_t multOutput[MAX_BLOCKSIZE];   // too large for stack
+
 /*
 ** Input Data for two vectors
 */
@@ -147,6 +149,7 @@ float32_t srcB[MAX_BLOCKSIZE] =
     -2.778396, 0.856749, -1.833541, -1.266217,
 };
 
+
 float dot_product3(float v1[], float v2[], int length)
 {
 
@@ -166,7 +169,6 @@ float dot_product2(float v1[], float v2[], int length)
 {
     int       i;
     float32_t testOutput;  
-    float32_t multOutput[MAX_BLOCKSIZE];  
 
     (void) start_systick();
 

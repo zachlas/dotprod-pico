@@ -1,3 +1,4 @@
+image: jasonrandrews/pico-dev:gitpod
 tasks:
   - name: build sdk
     init: |
